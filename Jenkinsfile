@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        // मॅकच्या डॉकर बायनरीचे सर्व संभाव्य पाथ आपण इथे टाकत आहोत
+        PATH = "/Applications/Docker.app/Contents/Resources/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
@@ -21,4 +26,3 @@ pipeline {
         }
     }
 }
-
